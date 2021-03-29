@@ -1,4 +1,13 @@
 extends layouts/main
+include mixins/videoBlock
 
 block content
-    p hello welcome to my home
+    each item in video
+        +videoBlock({
+            id:item.id,
+            title:item.title,
+            views:item.views,
+            videoFile:item.videoFile
+        })
+
+    
